@@ -1,10 +1,3 @@
-// Arrays to keep track of each task's state
-const taskTitles = [];
-const taskComplete = [];
-const taskDescriptions = [];
-
-// Create a new task by adding to the arrays
-// A new task will be created as incomplete
 function newTask(title, description) {
   const task = {
     title: title,
@@ -16,9 +9,6 @@ function newTask(title, description) {
     logState: function () {
       console.log(`${this.title} has${this.complete ? " " : " not "}been completed`); // got to keep dat ternary inside. Cool AF!
     }
-    // taskTitles.push(title);
-    // taskDescriptions.push(description);
-    // taskComplete.push(false);
   };
   return task;
 }
@@ -41,9 +31,9 @@ const task1 = newTask("Clean Cat Litter", "Go panning for cat turds.");
 const task2 = newTask("Do laundry", "Ugh");
 const tasks = [task1, task2];
 
-logTaskState(task1);
-completeTask(task1);
-logTaskState(task1);
+task1.logState();
+task1.markCompleted();
+task1.logState();
 
-console.log(tasks);
+
 
